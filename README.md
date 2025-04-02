@@ -29,10 +29,10 @@ This project supports the latest OpenAI Python SDK (v1.x) and automatically hand
 ## Output Examples
 
 ### Example 1
-![example-1](./screenshots/example1.png)
+![example-1](./screenshots/example1.jpeg)
 
 ### Example 2
-![example-2](./screenshots/example2.png)
+![example-2](./screenshots/example2.jpeg)
 
 ---
 
