@@ -1,49 +1,51 @@
 
-# DalleImageNodes - ComfyUI OpenAI DALL·E 自定义节点插件
+# DalleImageNodes - OpenAI DALL·E Nodes for ComfyUI
 
-## 📌 简介 | Introduction | 紹介
+## Overview
 
-**DalleImageNodes** 是适用于 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 的自定义节点插件，基于 OpenAI 官方 API 实现 **DALL·E 3 图像生成、编辑和变体功能**，支持 OpenAI SDK v1.x，自动处理图像尺寸和格式。
+DalleImageNodes is a custom extension for [ComfyUI](https://github.com/comfyanonymous/ComfyUI) that integrates OpenAI's DALL·E 3 API for:
 
-This is a **custom node plugin for ComfyUI**, using OpenAI's latest DALL·E 3 image generation APIs (via SDK v1.x), supporting image generation, inpainting (edit), and variation. It includes automatic resizing and format compatibility.
+- Image generation
+- Inpainting (image editing)
+- Image variation
 
-OpenAIの DALL·E 3 API を利用して、画像生成・編集・バリエーションを可能にする ComfyUI 用のカスタムノードです。OpenAI SDK v1.xに対応し、自動でサイズや形式も調整されます。
+This project supports the latest OpenAI Python SDK (v1.x) and automatically handles image resizing and format requirements (RGBA, fixed sizes) based on the examples from the offical Dall-E website.
 
 ---
 
-## 🖼️ 功能截图 | Screenshots | スクリーンショット
+## Node Previews
 
-### 🧠 图像生成 | Image Generation | 画像生成
+### Image Generation
 ![generation-screenshot](./screenshots/generation.png)
 
-### 🎨 图像编辑 | Image Editing | 画像編集
+### Image Editing
 ![edit-screenshot](./screenshots/edit.png)
 
-### 🔁 图像变体 | Image Variation | バリエーション
-![variation-screenshot](./screenshots/variation.png)
-
-### 🔁 图像变体 | Image Variation | バリエーション
+### Image Variation
 ![variation-screenshot](./screenshots/variation.png)
 
 ---
 
-## 📦 安装方式 | Installation | インストール
+## Output Examples
 
-将 `DalleImageNodes_async_final.py` 文件复制到您的 `ComfyUI/custom_nodes/任意文件夹/` 目录下。
+### Example 1
+![example-1](./screenshots/example1.png)
 
-Copy `DalleImageNodes_async_final.py` into any folder under your `ComfyUI/custom_nodes/` directory.
-
-`DalleImageNodes_async_final.py` を `ComfyUI/custom_nodes/任意のフォルダ/` に配置してください。
+### Example 2
+![example-2](./screenshots/example2.png)
 
 ---
 
-## 🛠️ 配置 OpenAI 密钥 | Configure API Key | APIキーの設定
+## Installation
 
-请在同一目录下创建 `config.json`，内容如下：
+1. Copy `DalleImageNodes_async_final.py` into any folder under your `ComfyUI/custom_nodes/` directory.
+2. Restart ComfyUI.
 
-Create a `config.json` in the same folder as the node file:
+---
 
-ノードと同じフォルダに `config.json` を作成してください：
+## Configuration
+
+Create a `config.json` file in the same folder as the `.py` node file:
 
 ```json
 {
@@ -51,19 +53,21 @@ Create a `config.json` in the same folder as the node file:
 }
 ```
 
----
-
-## ✅ 支持功能 | Features | 機能一覧
-
-- ✅ DALL·E 3 图像生成 / Image Generation / 画像生成
-- ✅ 图像编辑（Inpainting）/ Editing / 編集
-- ✅ 图像变体（Variation）/ Variation / バリエーション
-- ✅ 自动转换为 RGBA + 固定尺寸
-- ✅ 支持批量生成 + seed 输入
-- ✅ 完全兼容 OpenAI Python SDK v1+
+This file is required for authentication with OpenAI's API.
 
 ---
 
-## 📄 License
+## Features
+
+- Text-to-image generation using DALL·E 3
+- Inpainting with prompt and mask
+- Image variation support
+- Automatic RGBA conversion and resizing
+- Batch generation
+- Fully async (based on `AsyncOpenAI`)
+
+---
+
+## License
 
 MIT License.
